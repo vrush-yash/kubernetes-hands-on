@@ -1,0 +1,20 @@
+Docker file
+Docker container
+Pod
+Replication Controller
+Deployment
+Services
+Labels
+Reqadiness/Liveliness
+Volumes
+Secrets
+ConfigMap
+StatefulSets
+Autoscaling
+Affinity/anti-affinity
+Namespaces
+RBAC
+Networking(clusterIP, NodePort, Azure/AWS/GCP LoadBalancer)
+Helm
+Serverless/kuberless
+CI/CD with Kubernetes and Jenkins to deploy Helm charts
