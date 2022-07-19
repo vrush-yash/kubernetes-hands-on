@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat
+  labels:
+    test: https
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: tomcat
+    test: https
+  type: LoadBalancer

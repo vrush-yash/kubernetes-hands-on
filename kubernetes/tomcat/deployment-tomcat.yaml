@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  labels:
+    test: https
+spec:
+  selector:
+    matchLabels:
+      app: tomcat
+      test: https
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: tomcat
+        test: https
+    spec:
+      containers:
+      - name: tomcat
+        image: vrushyash/tomcat:latest
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MYSQL_SERVER_HOST
+            value: "mysql"
+          - name: MYSQL_SERVER_PORT
+            value: "3306"
+          - name: MYSQL_SERVER_DB_NAME
+            value: "testDB"
+          - name: MYSQL_SERVER_USER
+            value: "vrushal"
+          - name: MYSQL_SERVER_PASSWORD
+            value: "mysql123"
